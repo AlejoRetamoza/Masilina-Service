@@ -8,6 +8,9 @@ import userRoutes from './routes/user.route';
 import filesRoutes from './routes/files.route';
 import projectRoutes from './routes/project.route';
 import emailRoutes from './routes/email.route';
+import productRoutes from './routes/product.route';
+import brandRoutes from './routes/brand.route';
+import categoryRoutes from './routes/category.route';
 // settings
 
 const port = process.env.PORT;
@@ -34,5 +37,8 @@ app.use('/api/user', userRoutes);
 app.use('/api/file', filesRoutes);
 app.use('/api/project', projectRoutes);
 app.use('/api/email', emailRoutes);
+app.use('/api/product', productRoutes);
+app.use('/api/brand', brandRoutes);
+app.use('/api/category', categoryRoutes);
 
 export default app;
