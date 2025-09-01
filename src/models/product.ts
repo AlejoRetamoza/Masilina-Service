@@ -23,6 +23,9 @@ export class Product extends BaseEntity {
 
 	@Column({ nullable: false, type: 'float', default: 0 })
 	price: number;
+
+	@Column('text', { array: true, default: '{}' })
+	imagesList: string[];
 	
 	@DeleteDateColumn()
 	deletedAt?: Date;
@@ -33,6 +36,6 @@ export class Product extends BaseEntity {
 	@ManyToOne(() => Brand, brand => brand.products)
 	brand: Brand;
 	
-	@OneToMany(() => ProductCategory, (product_category) => product_category.product, { cascade: true})
+	@OneToMany(() => ProductCategory, (product_category) => product_category.product, { cascade: true })
 	categories: ProductCategory[];
 }
