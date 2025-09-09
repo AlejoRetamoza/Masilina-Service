@@ -1,6 +1,5 @@
 import { DataSource } from "typeorm";
 import { User } from "./models/user";
-import { Project } from "./models/project";
 import { Brand } from "./models/brand";
 import { Category } from "./models/category";
 import { Product } from "./models/product";
@@ -15,5 +14,5 @@ export const AppDataSource = new DataSource({
 	database: "pgequipamientos",
 	synchronize: true,
 	// logging: true,
-	entities: [User, Project, Brand, Category, Product, ProductCategory],
+	entities: [User, Brand, Category, Product, ProductCategory],
 });
