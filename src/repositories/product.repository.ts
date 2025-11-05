@@ -23,6 +23,8 @@ export async function getAll(
         query.andWhere(
             new Brackets((qb) => {
                 qb.where("LOWER(product.name) LIKE :filter", { filter: `%${filter}%` })
+                  .orWhere("LOWER(brand.name) LIKE :filter", { filter: `%${filter}%` })
+                  .orWhere("LOWER(category.name) LIKE :filter", { filter: `%${filter}%` });
             })
         );
     }
